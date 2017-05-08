@@ -1,19 +1,30 @@
-# minimatch
+# fwdmatch
 
-A minimal matching utility.
+A minimal matching utility, assuming exclusively unix-style patterns.
 
-[![Build Status](https://secure.travis-ci.org/isaacs/minimatch.svg)](http://travis-ci.org/isaacs/minimatch)
-
-
-This is the matching library used internally by npm.
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Travis Status][travis-image]][travis-url]
 
 It works by converting glob expressions into JavaScript `RegExp`
 objects.
 
+## Fork notice
+
+This is a fork of [minimatch][minimatch-url] which assumes exclusively _forward
+slashes_ as file separators, making it consistent with the documented usage of
+[node-glob][node-glob-url].
+
+The intended side-effect is to restore the ability to escape special characters
+using back slashes, otherwise not possible on Windows.
+
+There's a corresponding fork [fwdglob][fwdglob-url] of node-glob which makes
+use of this module, amongst some other (minor) tweaks.
+
+The remainder of this `README.md` is essentially verbatim from upstream.
+
 ## Usage
 
 ```javascript
-var minimatch = require("minimatch")
+var minimatch = require("fwdmatch")
 
 minimatch("bar.foo", "*.foo") // true!
 minimatch("bar.foo", "*.bar") // false!
@@ -40,7 +51,7 @@ See:
 Create a minimatch object by instantiating the `minimatch.Minimatch` class.
 
 ```javascript
-var Minimatch = require("minimatch").Minimatch
+var Minimatch = require("fwdmatch").Minimatch
 var mm = new Minimatch(pattern, options)
 ```
 
@@ -207,3 +218,14 @@ other interpretation of the glob pattern.  Thus, a pattern like
 `+(a|{b),c)}`, which would not be valid in bash or zsh, is expanded
 **first** into the set of `+(a|b)` and `+(a|c)`, and those patterns are
 checked for validity.  Since those two are valid, matching proceeds.
+
+[minimatch-url]: https://github.com/isaacs/minimatch
+[node-glob-url]: https://github.com/isaacs/node-glob
+[fwdglob-url]: https://github.com/erikkemperman/fwdglob
+
+[npm-url]: https://www.npmjs.com/package/fwdmatch
+[npm-image]: https://badge.fury.io/js/fwdmatch.svg
+[downloads-image]: http://img.shields.io/npm/dm/fwdmatch.svg
+
+[travis-url]: https://travis-ci.org/erikkemperman/fwdmatch
+[travis-image]: https://travis-ci.org/erikkemperman/fwdmatch.svg?branch=master

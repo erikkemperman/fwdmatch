@@ -1,11 +1,12 @@
 {
-  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
-  "name": "minimatch",
-  "description": "a glob matcher in javascript",
+
+  "name": "fwdmatch",
+  "description": "Fork of isaacs/minimatch",
   "version": "3.0.4",
+  "author": "Erik Kemperman <erikkemperman@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/isaacs/minimatch.git"
+    "url": "git://github.com/erikkemperman/fwdmatch.git"
   },
   "main": "minimatch.js",
   "scripts": {

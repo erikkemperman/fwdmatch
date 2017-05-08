@@ -2,7 +2,7 @@
 
 A minimal matching utility, assuming exclusively unix-style patterns.
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Travis Status][travis-image]][travis-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Travis Status][travis-image]][travis-url] [![Appveyor Status][appveyor-image]][appveyor-url]
 
 It works by converting glob expressions into JavaScript `RegExp`
 objects.
@@ -229,3 +229,7 @@ checked for validity.  Since those two are valid, matching proceeds.
 
 [travis-url]: https://travis-ci.org/erikkemperman/fwdmatch
 [travis-image]: https://travis-ci.org/erikkemperman/fwdmatch.svg?branch=master
+
+[appveyor-url]: https://ci.appveyor.com/project/erikkemperman/fwdmatch/branch/master
+[appveyor-image]: https://ci.appveyor.com/api/projects/status/wb1te6niel4x672h/branch/master?svg=true
+
